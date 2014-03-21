@@ -1,6 +1,6 @@
 feather
 =======
-![logo](http://cdnjscn.b0.upaiyun.com/plus/github/featherlogo.png)
+![logo](http://cdnjscn.b0.upaiyun.com/plus/github/logo.png)
 A simple blog
 
 dependencies
