@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
 	post= require('../models/post');
 	
 exports.write = function(req,res){
-	res.render('write',{title:'aaadd'});
+	res.render('write',{title:'发表'});
 };
 
 exports.post = function(req,res){
