@@ -1,5 +1,14 @@
-<ul>
+<a href="http://127.0.0.1:8888/blog/post/write">写博客</a>
+
 	{{#list}}
-	<li><a href="/blog/{{_id}}">{{title}}</a></li>
+	<h2><a href="/blog/{{_id}}">{{title}}</a></h2>
+	<div>
+		{{content}}
+	</div>
 	{{/list}}
-</ul>
+	
+	<a href="/blog/?page=1">首页</a>
+	{{#pager.list}}
+		<a href="/blog/?page={{.}}">{{.}}</a>
+	{{/pager.list}}
+	<a href="/blog/?page={{pager.maxPage}}">末页</a>
