@@ -16,3 +16,15 @@ exports.post = function(req,res){
 		res.render('post',data);
 	});  
 };
+
+exports.update = function(req,res){
+	post.findOne({
+		'_id': mongoose.Types.ObjectId(req.params.id)
+	},function(err,data){
+		if (!data) {
+			res.send(500);
+			return;
+		}
+		res.render('update',data);
+	});  
+};

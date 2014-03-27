@@ -1,0 +1,28 @@
+<style>
+li {
+	list-style:none;
+}
+input {
+	width:600px;
+	height:26px;
+	margin:10px 0;
+}
+textarea {
+	width:600px;
+	height:400px;
+}
+</style>
+<form method="post" action="/blog/api/post/update">
+	<input name="id" type='hidden' value="{{_id}}">
+	<ul>
+	<li>
+	<input name="t" type='text' value="{{title}}">
+	</li>
+	<li>
+	<textarea name="c">{{content}}</textarea>
+	</li>
+	<li>
+	<button type="submit">更新</button>		
+	</li>
+	</ul>
+</form>

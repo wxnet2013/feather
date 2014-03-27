@@ -47,11 +47,15 @@ if ('development' == app.get('env')) {
 app.get('/blog', routes.index);
 //detail
 app.get('/blog/:id', post.post);
+// update
+app.get('/blog/:id/update', post.update);
 //write
 app.get('/blog/post/write', post.write);
 
 //apis
 app.post('/blog/api/post/save', api.save);
+app.post('/blog/api/post/delete', api.delete);
+app.post('/blog/api/post/update', api.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
