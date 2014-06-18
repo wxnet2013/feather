@@ -11,14 +11,15 @@ var path = require('path');
 var app = express();
 
 //share connection
-var uri = 'mongodb://' + mongo.ip + ':' + mongo.port + '/post';
-global.db = mongoose.createConnection(uri);
+// var uri = 'mongodb://' + mongo.ip + ':' + mongo.port + '/post';
+global.db = mongoose.createConnection(mongo.url,{read_secondary: true});
 
 var routes = require('./routes');
 var post = require('./routes/post');
 var api = require('./routes/api');
 
 // all environments
+app.set('base', '');
 app.set('port', process.env.PORT || 8888);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'mustache');
@@ -44,18 +45,18 @@ if ('development' == app.get('env')) {
 
 //pages
 //index
-app.get('/blog', routes.index);
+app.get(app.get('base') + '/', routes.index);
 //detail
-app.get('/blog/:id', post.post);
+app.get(app.get('base') + '/:id', post.post);
 // update
-app.get('/blog/:id/update', post.update);
+app.get(app.get('base') + '/:id/update', post.update);
 //write
-app.get('/blog/post/write', post.write);
+app.get(app.get('base') + '/post/write', post.write);
 
 //apis
-app.post('/blog/api/post/save', api.save);
-app.post('/blog/api/post/delete', api.delete);
-app.post('/blog/api/post/update', api.update);
+app.post(app.get('base') + '/api/post/save', api.save);
+app.post(app.get('base') + '/api/post/delete', api.delete);
+app.post(app.get('base') + '/api/post/update', api.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

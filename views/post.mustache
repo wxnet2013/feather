@@ -2,8 +2,8 @@
 <div>
 	{{content}}
 </div>
-<a href="/blog/{{_id}}/update">修改</a>
-<form id='del_form' method="post" action="/blog/api/post/delete">
+<a href="/{{_id}}/update">修改</a>
+<form id='del_form' method="post" action="/api/post/delete">
 	<input type="hidden" name="id" value="{{_id}}">
 	<a href="#" onclick="document.getElementById('del_form').submit();">删除</a>	
 </form>
