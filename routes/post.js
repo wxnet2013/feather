@@ -13,6 +13,7 @@ exports.post = function(req,res){
 			res.send(500);
 			return;
 		}
+		data.isLogin = false;
 		res.render('post',data);
 	});  
 };
