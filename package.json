@@ -12,10 +12,10 @@
         "url": "https://github.com/wxnet2013"
       }
   ],
-  "homepage": "https://github.com/wxnet2013/feather",
+  "homepage": "https://github.com/wxnet2013/koa-feather",
   "repository": {
       "type": "git",
-      "url": "git@github.com:wxnet2013/feather.git"
+      "url": "git@github.com:wxnet2013/koa-feather.git"
   },
   "main": "index.js",
   "dependencies": {
