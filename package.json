@@ -1,6 +1,6 @@
 {
-  "name": "feather",
-  "description": "A lightweight web framework based on  koa.",
+  "name": "feathers",
+  "description": "A lightweight web framework based on koa.",
   "version": "0.0.1",
   "author": {
       "name": "wxnet2013",
