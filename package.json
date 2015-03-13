@@ -1,0 +1,27 @@
+{
+  "name": "feather",
+  "description": "A lightweight web framework based on  koa.",
+  "version": "0.0.1",
+  "author": {
+      "name": "wxnet2013",
+      "url": "https://github.com/wxnet2013"
+  },
+  "contributors": [
+      {
+        "name": "wxnet2013",
+        "url": "https://github.com/wxnet2013"
+      }
+  ],
+  "homepage": "https://github.com/wxnet2013/feather",
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:wxnet2013/feather.git"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "koa": "0.18.1",
+    "koa-router": "4.2.0",
+    "koa-views": "3.0.0",
+	"hogan.js": "3.0.2"
+  }
+}
