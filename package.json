@@ -1,7 +1,7 @@
 {
   "name": "koa-feather",
   "description": "A lightweight web framework based on koa.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
       "name": "wxnet2013",
       "url": "https://github.com/wxnet2013"
