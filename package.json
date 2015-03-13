@@ -1,5 +1,5 @@
 {
-  "name": "feathers",
+  "name": "koa-feather",
   "description": "A lightweight web framework based on koa.",
   "version": "0.0.1",
   "author": {
