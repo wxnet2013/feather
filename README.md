@@ -2,6 +2,20 @@
 
 A lightweight web framework based on koa.
 
+
+### 快速开始
+app.js
+
+```
+var feather = require('koa-feather');
+
+var app = feather();
+
+router.get('/', function* (next){
+	yield this.render('index',{});
+});
+```
+
 ### 路由设置
 <https://github.com/alexmingoia/koa-router>
 
@@ -9,9 +23,7 @@ A lightweight web framework based on koa.
 * router.post
 
 ### 模版引擎
-feather-views在koa-views的基础上做了简单的修改，以支持模版layout
-<https://github.com/wxnet2013/feather-views>
-<https://github.com/queckezz/koa-views>
+[feather-views](https://github.com/wxnet2013/feather-views)在[koa-views](https://github.com/queckezz/koa-views)的基础上做了简单的修改，以支持模版的layout。
 
 ```
 router.get('/u/:id', function* (next) {
@@ -20,15 +32,16 @@ router.get('/u/:id', function* (next) {
 	});
 });
 ```
+
 views/user.html
+
 ```
-<div>{{username}}</div>
+{{user}}
 ```
 
 views/layout.html
+
 ```
-<body>
 {{>yield}}
-</body>
 ```
 
