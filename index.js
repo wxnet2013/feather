@@ -1,5 +1,5 @@
 var koa = require('koa');
-var views = require('koa-views');
+var views = require('feather-views');
 var path = require('path');
 
 module.exports = function(){
