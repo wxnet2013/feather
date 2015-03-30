@@ -1,7 +1,7 @@
 {
   "name": "koa-feather",
   "description": "A lightweight web framework based on koa.",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": {
       "name": "wxnet2013",
       "url": "https://github.com/wxnet2013"
@@ -22,6 +22,7 @@
     "koa": "0.18.1",
     "koa-router": "4.2.0",
     "feather-views": "3.0.0",
-	"hogan.js": "3.0.2"
+	"hogan.js": "3.0.2",
+	"koa-session": "3.1.0"
   }
 }
