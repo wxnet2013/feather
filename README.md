@@ -45,3 +45,11 @@ views/layout.html
 {{>yield}}
 ```
 
+### Session配置
+在项目的package.json中添加配置信息
+```
+  "session": {
+	  "keys": "your secret key"
+  }
+```
+
