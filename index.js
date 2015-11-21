@@ -12,18 +12,21 @@ module.exports = function(){
 	    html: 'hogan'
 	  }
 	}));
-	// https://github.com/alexmingoia/koa-router
-	var router = global.router = require('koa-router')();
-	app.use(router.routes()).use(router.allowedMethods());
+	
 	
 	var config = require(basePath + '/package.json');
 	var redisConfig = require(basePath + '/redis.json');
-	
+	// https://github.com/koajs/koa-redis
 	if(config.session && config.session.keys) {
 		app.keys = [config.session.keys];
 		app.use(session({
 		  store: redisStore(redisConfig)
 		}));
 	}
+	
+	// https://github.com/alexmingoia/koa-router
+	var router = global.router = require('koa-router')();
+	app.use(router.routes()).use(router.allowedMethods());
+	
 	return app;
 };
