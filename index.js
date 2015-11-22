@@ -22,6 +22,11 @@ module.exports = function(){
 		app.use(session({
 		  store: redisStore(redisConfig)
 		}));
+		// 页面加载后生成sessionid
+		app.use(function *(next) {
+		  this.session.name = 'koa-redis';
+		  yield next;
+		});
 	}
 	
 	// https://github.com/alexmingoia/koa-router
