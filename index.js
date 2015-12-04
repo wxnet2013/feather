@@ -31,9 +31,7 @@ module.exports = function(){
 	
 	// https://github.com/alexmingoia/koa-router
 	var router = global.router = require('koa-router')();
-	app.use(router.routes({
-		prefix: config.router && config.router.prefix ? config.router.prefix : '/'
-	})).use(router.allowedMethods());
+	app.use(router.routes()).use(router.allowedMethods());
 	
 	return app;
 };
