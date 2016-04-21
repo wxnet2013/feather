@@ -15,9 +15,9 @@ module.exports = function(){
 	
 	
 	var config = require(basePath + '/package.json');
-	var redisConfig = require(basePath + '/redis.json');
 	// https://github.com/koajs/koa-redis
 	if(config.session && config.session.keys) {
+    var redisConfig = require(basePath + '/redis.json');
 		app.keys = [config.session.keys];
 		app.use(session({
 		  store: redisStore(redisConfig)
