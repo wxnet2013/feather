@@ -3,9 +3,25 @@ var views = require('feather-views');
 var path = require('path');
 var session = require('koa-generic-session');
 var redisStore = require('koa-redis');
+var conditional = require('koa-conditional-get');
+var etag = require('koa-etag');
+var compress = require('koa-compress')
 
 module.exports = function(){
 	var app = koa();
+  
+  // etag start
+  app.use(conditional());
+  app.use(etag());
+  
+  // compress
+  app.use(compress({
+    filter: function (content_type) {
+    	return /text/i.test(content_type)
+    },
+    threshold: 2048,
+    flush: require('zlib').Z_SYNC_FLUSH
+  }));
   
 	var basePath = path.dirname(module.parent.filename);
 	app.use(views(basePath + '/views', {
