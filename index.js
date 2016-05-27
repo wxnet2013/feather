@@ -10,10 +10,6 @@ var compress = require('koa-compress')
 module.exports = function(){
 	var app = koa();
   
-  // etag start
-  app.use(conditional());
-  app.use(etag());
-  
   // compress
   app.use(compress({
     filter: function (content_type) {
@@ -22,6 +18,10 @@ module.exports = function(){
     threshold: 2048,
     flush: require('zlib').Z_SYNC_FLUSH
   }));
+  
+  // etag start
+  app.use(conditional());
+  app.use(etag());
   
 	var basePath = path.dirname(module.parent.filename);
 	app.use(views(basePath + '/views', {
