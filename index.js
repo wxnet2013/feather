@@ -3,9 +3,16 @@ var views = require('feather-views');
 var path = require('path');
 var session = require('koa-generic-session');
 var redisStore = require('koa-redis');
+var conditional = require('koa-conditional-get');
+var etag = require('koa-etag');
 
 module.exports = function(){
 	var app = koa();
+  
+  // etag start
+  app.use(conditional());
+  app.use(etag());
+  
 	var basePath = path.dirname(module.parent.filename);
 	app.use(views(basePath + '/views', {
 	  map: {
