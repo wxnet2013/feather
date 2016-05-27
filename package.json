@@ -1,7 +1,7 @@
 {
   "name": "koa-feather",
   "description": "A lightweight web framework based on koa.",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "author": {
       "name": "wxnet2013",
       "url": "https://github.com/wxnet2013"
@@ -21,8 +21,6 @@
   "dependencies": {
     "koa": "1.2.0",
     "koa-router": "5.4.0",
-    "koa-conditional-get": "1.0.3",
-    "koa-etag": "2.1.1",
     "feather-views": "3.0.0",
     "hogan.js": "3.0.2",
     "koa-redis": "2.1.1",
