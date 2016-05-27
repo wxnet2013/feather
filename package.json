@@ -21,6 +21,9 @@
   "dependencies": {
     "koa": "1.2.0",
     "koa-router": "5.4.0",
+    "koa-conditional-get": "1.0.3",
+    "koa-etag": "2.1.1",
+    "koa-compress": "1.0.9",
     "feather-views": "3.0.0",
     "hogan.js": "3.0.2",
     "koa-redis": "2.1.1",
